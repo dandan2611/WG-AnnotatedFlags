@@ -9,6 +9,9 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A builder for flags.
+ */
 public class FlagBuilder {
 
     private static final Map<Class<? extends Annotation>, FlagConstructor<Annotation>> constructors = new HashMap<>();
@@ -101,6 +104,14 @@ public class FlagBuilder {
      * @param <A> the annotation type
      */
     public interface FlagConstructor<A extends Annotation> {
+
+        /**
+         * Construct a flag from an annotation and a field.
+         *
+         * @param annotation the annotation
+         * @param field the field
+         * @return the flag
+         */
         @NotNull Flag<?> construct(@NotNull A annotation, @NotNull Field field);
     }
 

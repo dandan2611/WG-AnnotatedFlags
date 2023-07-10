@@ -9,6 +9,9 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A scanner for flags.
+ */
 public class FlagScanner {
 
     /**
@@ -17,6 +20,7 @@ public class FlagScanner {
      * @param clazz the class to scan
      * @param registry the flag registry
      * @throws FlagConflictException if a flag is already registered
+     * @throws IllegalAccessException if a flag cannot be set
      */
     public static void registerFlags(@NotNull Class<?> clazz, @NotNull FlagRegistry registry) throws FlagConflictException, IllegalAccessException {
         var flagFields = scanStaticFlagFields(clazz);

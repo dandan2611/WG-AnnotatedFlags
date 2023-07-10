@@ -5,10 +5,18 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Register a {@link com.sk89q.worldguard.protection.flags.TimestampFlag}
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface RegisterTimestampFlag {
 
+    /**
+     * The name of the flag
+     *
+     * @return the name of the flag
+     */
     String name();
 
 }
