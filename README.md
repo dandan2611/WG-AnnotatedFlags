@@ -51,7 +51,7 @@ public class MyPlugin extends JavaPlugin {
         final var registry = WorldGuard.getInstance().getFlagRegistry();
 
         try {
-            FlagScanner.registerFlags(TheClassWithFlags.class, registry);
+            FlagScanner.registerFlags(MyFlags.class, registry);
         } catch (FlagConflictException | IllegalAccessException e) {
             Bukkit.getLogger().log(Level.SEVERE, "Unable to register custom WorldGuard flags", e);
             Bukkit.getPluginManager().disablePlugin(this);
